@@ -18,7 +18,7 @@ public class ItemValidator implements Validator {
     public void validate(Object target, Errors errors) {
 
         Item item = (Item) target;
-
+        System.out.println(item);
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "itemName", "required");
 
         if (item.getPrice() == null || item.getPrice() < 1_000 || item.getPrice() > 1_000_000) {
